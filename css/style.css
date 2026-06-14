@@ -268,21 +268,26 @@ body {
 .steps {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 900px;
+  justify-content: center;
+  gap: 12px;
+  max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
 }
+
 .step {
   display: flex;
   align-items: center;
   gap: 12px;
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 12px 20px;
+  padding: 12px 16px;
   border-radius: var(--radius);
+  flex: 1; /* Forces all steps to share the horizontal row space equally */
+  min-width: 0; /* Prevents text overflow breaking layouts */
+  white-space: nowrap; /* Keeps title and subtitle aligned crisply */
 }
+
 .step-num {
   width: 22px;
   height: 22px;
@@ -294,11 +299,41 @@ body {
   font-weight: 600;
   font-size: 0.75rem;
   color: var(--text);
+  flex-shrink: 0; /* Prevents the numbers from squeezing */
 }
-.step-text { font-size: 0.8rem; color: var(--text-muted); text-align: left; }
-.step-text strong { color: var(--text); font-weight: 500; }
-.step-arrow { color: var(--border); font-size: 1.1rem; }
 
+.step-text { 
+  font-size: 0.75rem; 
+  color: var(--text-muted); 
+  text-align: left; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.step-text strong { color: var(--text); font-weight: 500; }
+
+.step-arrow { 
+  color: var(--border); 
+  font-size: 1rem; 
+  flex-shrink: 0;
+  user-select: none;
+}
+
+/* Responsive adjustment so it shifts safely on mobile windows */
+@media (max-width: 1024px) {
+  .steps {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .step {
+    width: 100%;
+    max-width: 400px;
+  }
+  .step-arrow {
+    transform: rotate(90deg); /* Flips the arrow downward for vertical lists */
+    margin: 2px 0;
+  }
+}
 /* Drop zone */
 .drop-zone {
   margin: 40px 40px 60px;
