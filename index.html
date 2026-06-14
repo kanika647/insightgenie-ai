@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InsightGenie — Business Decision Engine</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div id="landing" class="screen active">
+  <header class="land-header">
+    <div class="logo">
+      <span class="logo-icon">I</span>
+      <span class="logo-text">InsightGenie<em>Engine</em></span>
+    </div>
+    <nav class="land-nav">
+      <a href="#features-section">Features</a>
+      <a href="#how-section">How it works</a>
+      <button class="btn-primary" onclick="document.getElementById('fileInput').click()">Analyze Dataset →</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <p class="eyebrow">Automated Platform</p>
+      <h1>
+        Connect your data.
+        <br/>
+        Extract insights.
+        <br/>
+        <span class="accent">Drive decisions.</span>
+      </h1>
+      <p class="hero-sub">Upload transactional business data files to instantly extract core operational KPI dashboards, predictive regressions, anomalies, and structural trends.</p>
+      <div class="hero-cta">
+        <button class="btn-primary btn-lg" onclick="document.getElementById('fileInput').click()">
+          Upload dataset
+        </button>
+        <button class="btn-ghost btn-lg" onclick="loadSampleData()">Explore sample data</button>
+      </div>
+      <p class="hero-hint">Supports standard CSV or Excel structures · Client-side processing</p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-mockup">
+        <div class="mock-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="mock-kpis">
+          <div class="mock-kpi"><div class="mk-label">Revenue</div><div class="mk-val">₹2.4M</div><div class="mk-badge up">↑ 18.4%</div></div>
+          <div class="mock-kpi"><div class="mk-label">Orders</div><div class="mk-val">6,821</div><div class="mk-badge up">↑ 12.1%</div></div>
+        </div>
+        <div class="mock-chart">
+          <svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,65 40,55 80,50 120,35 160,38 200,20 240,15 300,8" fill="none" stroke="#4f46e5" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="mock-insight">
+          <span class="mic-dot"></span>
+          <span>Automatic structural segmentation active</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-strip" id="features-section">
+    <div class="feat-card">
+      <div class="feat-icon">📊</div>
+      <h3>Auto KPI Engine</h3>
+      <p>Aggregates revenue, order totals, transactional counts, and regional balances natively upon ingestion.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔍</div>
+      <h3>Statistical Anomalies</h3>
+      <p>Isolates irregular margin dips and statistical out-of-bounds metrics via automated Z-score computations.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📈</div>
+      <h3>Trend Modeling</h3>
+      <p>Applies predictive mathematical regressions across historical timelines to map clear momentum vectors.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">💬</div>
+      <h3>Natural Processing</h3>
+      <p>Translates structured user data metrics into straightforward structural summaries via targeted criteria parsing.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎯</div>
+      <h3>Strategic Actions</h3>
+      <p>Surfaces operational optimization priorities compiled from internal metric balances.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚡</div>
+      <h3>Data Isolation</h3>
+      <p>Engineered for high-speed local processing. No direct cloud account requirements or script dependencies.</p>
+    </div>
+  </section>
+
+  <section class="how-section" id="how-section">
+    <h2>Data Pipeline Lifecycle</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-text"><strong>File Ingestion</strong> (.csv / .xlsx)</div></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Structural Sorting</strong> & Matrix Mapping</div></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Dashboard Compilation</strong> & Charts</div></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">4</div><div class="step-text"><strong>Insight Extraction</strong> & Modeling</div></div>
+    </div>
+  </section>
+
+  <div class="drop-zone" id="dropZone">
+    <input type="file" id="fileInput" accept=".csv,.xlsx,.xls" hidden onchange="handleFileUpload(event)"/>
+    <div class="dz-inner">
+      <div class="dz-icon">📁</div>
+      <p class="dz-title">Select data target file or <span class="link" onclick="document.getElementById('fileInput').click()">browse files</span></p>
+      <p class="dz-hint">Accepts CSV, XLSX formats</p>
+    </div>
+  </div>
+
+  <footer class="land-footer">
+    <span>InsightGenie platform · HackGenome 2026</span>
+    <span>Pragati Gupta & Kanika Verma</span>
+  </footer>
+</div>
+
+<div id="loading" class="screen">
+  <div class="loading-inner">
+    <div class="spinner"></div>
+    <h2 id="loadingMsg">Ingesting raw structures…</h2>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</div>
+
+<div id="dashboard" class="screen">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-logo">
+      <span class="logo-icon">I</span>
+      <span class="logo-text">InsightGenie</span>
+    </div>
+    <nav class="sb-nav">
+      <a class="sb-link active" data-tab="overview" onclick="switchTab('overview',this)">
+        <span class="sb-icon">📊</span> Overview
+      </a>
+      <a class="sb-link" data-tab="trends" onclick="switchTab('trends',this)">
+        <span class="sb-icon">📈</span> Trends
+      </a>
+      <a class="sb-link" data-tab="anomalies" onclick="switchTab('anomalies',this)">
+        <span class="sb-icon">🚨</span> Anomalies
+      </a>
+      <a class="sb-link" data-tab="forecast" onclick="switchTab('forecast',this)">
+        <span class="sb-icon">🔮</span> Forecasting
+      </a>
+      <a class="sb-link" data-tab="recommendations" onclick="switchTab('recommendations',this)">
+        <span class="sb-icon">🎯</span> Actions
+      </a>
+    </nav>
+    <div class="sb-bottom">
+      <button class="btn-ghost full-width" onclick="goHome()">← Disconnect source</button>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+
+    <div class="topbar">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+      <div class="tb-info">
+        <span id="fileName" class="tb-filename">source_matrix.csv</span>
+        <span id="rowCount" class="tb-meta">0 entries</span>
+      </div>
+      <div class="tb-right">
+        <button class="btn-primary btn-sm" onclick="openChat()">💬 Query Dataset</button>
+      </div>
+    </div>
+
+    <div id="tab-overview" class="tab-content active">
+      <div class="tab-header">
+        <h2>Data Matrix Overview</h2>
+        <p id="overviewSub" class="tab-sub">Mapping systemic records balances…</p>
+      </div>
+      <div class="kpi-grid" id="kpiGrid"></div>
+      <div class="charts-row">
+        <div class="chart-card wide">
+          <h3>Performance Metrics Timeline</h3>
+          <canvas id="lineChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Category Balance Distribution</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+      <div class="charts-row">
+        <div class="chart-card">
+          <h3>High-Volume Target Segments</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Statistical Metric Density</h3>
+          <canvas id="histChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-trends" class="tab-content">
+      <div class="tab-header">
+        <h2>Trend Matrix</h2>
+        <p class="tab-sub">Systemic growth vectors, cyclical patterns, and momentum values</p>
+      </div>
+      <div id="trendsContent"></div>
+    </div>
+
+    <div id="tab-anomalies" class="tab-content">
+      <div class="tab-header">
+        <h2>Systemic Deviations</h2>
+        <p class="tab-sub">Isorhythmic exceptions out of standard deviations thresholds</p>
+      </div>
+      <div id="anomaliesContent"></div>
+    </div>
+
+    <div id="tab-forecast" class="tab-content">
+      <div class="tab-header">
+        <h2>Mathematical Forecasting</h2>
+        <p class="tab-sub">Linear regression projections extrapolated from system records</p>
+      </div>
+      <div id="forecastContent"></div>
+    </div>
+
+    <div id="tab-recommendations" class="tab-content">
+      <div class="tab-header">
+        <h2>Strategic Actions Matrix</h2>
+        <p class="tab-sub">Prioritized data-driven adjustments derived from metric behaviors</p>
+      </div>
+      <div id="recommendationsContent"></div>
+    </div>
+
+  </main>
+</div>
+
+<div id="chatPanel" class="chat-panel">
+  <div class="chat-header">
+    <div class="chat-title">
+      <span>Query Interface</span>
+    </div>
+    <button class="chat-close" onclick="closeChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="msg bot">
+      <div class="msg-avatar">E</div>
+      <div class="msg-bubble">
+        Dataset parser initiated. Request parameters regarding values, distributions, or trend trajectories.
+      </div>
+    </div>
+  </div>
+  <div class="chat-input-row">
+    <div class="suggested-qs" id="suggestedQs"></div>
+    <div class="chat-input-wrap">
+      <input type="text" id="chatInput" placeholder="Enter query parameters…" onkeydown="if(event.key==='Enter')sendChat()"/>
+      <button class="chat-send" onclick="sendChat()">Execute</button>
+    </div>
+  </div>
+</div>
+<div class="chat-overlay" id="chatOverlay" onclick="closeChat()"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

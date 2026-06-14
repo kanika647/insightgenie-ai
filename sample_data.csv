@@ -1,0 +1,73 @@
+Month,Product_Category,Region,Revenue,Orders,Customers,Satisfaction_Score,Profit_Margin
+Jan,Electronics,North,245000,312,198,4.2,0.28
+Jan,Electronics,South,198000,251,172,4.1,0.27
+Jan,Clothing,North,112000,654,521,4.4,0.42
+Jan,Clothing,South,98000,571,458,4.3,0.41
+Jan,Home & Garden,North,87000,234,201,4.0,0.31
+Jan,Food & Beverage,North,54000,892,744,4.5,0.18
+Feb,Electronics,North,261000,331,212,4.2,0.29
+Feb,Electronics,South,212000,269,184,4.1,0.27
+Feb,Clothing,North,118000,688,549,4.4,0.43
+Feb,Clothing,South,104000,606,484,4.3,0.42
+Feb,Home & Garden,North,91000,245,210,4.1,0.32
+Feb,Food & Beverage,North,57000,941,784,4.5,0.19
+Mar,Electronics,North,589000,742,614,4.6,0.34
+Mar,Electronics,South,228000,290,198,4.2,0.28
+Mar,Clothing,North,124000,723,578,4.5,0.43
+Mar,Clothing,South,110000,641,512,4.4,0.42
+Mar,Home & Garden,North,95000,256,220,4.1,0.32
+Mar,Food & Beverage,North,59000,978,815,4.6,0.19
+Apr,Electronics,North,278000,352,225,4.3,0.29
+Apr,Electronics,South,221000,281,192,4.2,0.28
+Apr,Clothing,North,129000,751,600,4.5,0.44
+Apr,Clothing,South,115000,671,536,4.4,0.43
+Apr,Home & Garden,North,98000,264,227,4.2,0.33
+Apr,Food & Beverage,North,61000,1008,840,4.6,0.20
+May,Electronics,North,291000,368,236,4.3,0.30
+May,Electronics,South,235000,298,204,4.2,0.29
+May,Clothing,North,135000,787,629,4.5,0.44
+May,Clothing,South,120000,700,560,4.4,0.43
+May,Home & Garden,North,102000,275,236,4.2,0.33
+May,Food & Beverage,North,64000,1056,880,4.7,0.20
+Jun,Electronics,North,312000,395,253,4.4,0.31
+Jun,Electronics,South,251000,318,218,4.3,0.29
+Jun,Clothing,North,141000,822,658,4.6,0.45
+Jun,Clothing,South,126000,735,588,4.5,0.44
+Jun,Home & Garden,North,108000,291,250,4.3,0.34
+Jun,Food & Beverage,North,68000,1121,934,4.7,0.21
+Jul,Electronics,North,325000,411,263,4.4,0.32
+Jul,Electronics,South,261000,331,226,4.3,0.30
+Jul,Clothing,North,148000,863,690,4.6,0.45
+Jul,Clothing,South,131000,764,611,4.5,0.44
+Jul,Home & Garden,North,112000,302,260,4.3,0.34
+Jul,Food & Beverage,North,71000,1171,976,4.7,0.21
+Aug,Electronics,North,341000,431,277,4.5,0.32
+Aug,Electronics,South,274000,347,237,4.4,0.30
+Aug,Clothing,North,155000,904,723,4.6,0.46
+Aug,Clothing,South,137000,799,639,4.5,0.45
+Aug,Home & Garden,North,117000,316,271,4.4,0.35
+Aug,Food & Beverage,North,74000,1221,1018,4.8,0.21
+Sep,Electronics,North,358000,453,291,4.5,0.33
+Sep,Electronics,South,288000,365,249,4.4,0.31
+Sep,Clothing,North,162000,945,756,4.7,0.46
+Sep,Clothing,South,143000,834,667,4.6,0.45
+Sep,Home & Garden,North,121000,327,281,4.4,0.35
+Sep,Food & Beverage,North,78000,1287,1073,4.8,0.22
+Oct,Electronics,North,372000,471,302,4.5,0.33
+Oct,Electronics,South,301000,381,261,4.4,0.31
+Oct,Clothing,North,169000,986,789,4.7,0.47
+Oct,Clothing,South,150000,875,700,4.6,0.46
+Oct,Home & Garden,North,127000,342,294,4.5,0.36
+Oct,Food & Beverage,North,82000,1353,1128,4.8,0.22
+Nov,Electronics,North,501000,634,407,4.6,0.35
+Nov,Electronics,South,404000,511,350,4.5,0.33
+Nov,Clothing,North,228000,1330,1064,4.8,0.48
+Nov,Clothing,South,202000,1178,942,4.7,0.47
+Nov,Home & Garden,North,171000,461,396,4.6,0.37
+Nov,Food & Beverage,North,110000,1819,1516,4.9,0.23
+Dec,Electronics,North,538000,681,437,4.7,0.36
+Dec,Electronics,South,433000,549,376,4.6,0.34
+Dec,Clothing,North,245000,1430,1144,4.8,0.49
+Dec,Clothing,South,217000,1266,1013,4.8,0.48
+Dec,Home & Garden,North,184000,496,426,4.7,0.38
+Dec,Food & Beverage,North,118000,1954,1629,4.9,0.24
