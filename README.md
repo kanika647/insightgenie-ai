@@ -113,8 +113,9 @@ insightgenie-ai/
 
 ## Team
 
-**Pragati Gupta** · pragatigupta02508@gmail.com · +91 9305726483  
-**Kanika Verma**
+**Pragati Gupta** · pragatigupta02508@gmail.com  
+**Kanika Verma**  · kanikaverma1811@gmail.com  
+
 
 ---
 
